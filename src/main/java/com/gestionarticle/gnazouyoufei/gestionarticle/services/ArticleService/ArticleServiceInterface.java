@@ -7,5 +7,4 @@ import javax.swing.text.html.parser.Entity;
 
 public interface ArticleServiceInterface extends BaseServiceInterface<Articles,Long> {
 //definir les methode specifique a la classe article
-
 }

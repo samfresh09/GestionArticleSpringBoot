@@ -2,23 +2,22 @@ package com.gestionarticle.gnazouyoufei.gestionarticle.models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 @Entity
-@Table(name ="Category" )
+@Table(name ="category" )
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Category {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     @NotBlank
     private UUID id;

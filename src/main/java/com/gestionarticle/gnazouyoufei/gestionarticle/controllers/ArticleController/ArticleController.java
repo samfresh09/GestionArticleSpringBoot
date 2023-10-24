@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ArticleController extends GenericControllerImplements<Articles, Long> {
     @Autowired
-    private final ArticleServiceInterface articleService;
+    public final ArticleServiceInterface articleService;
 
     public BaseServiceInterface<Articles, Long> getService() {
         return articleService;
