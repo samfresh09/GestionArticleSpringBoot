@@ -11,8 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class ArticleServiceImplementation extends BaseServiceImplementation<Articles,Long> implements ArticleServiceInterface<Articles> {
+public class ArticleServiceImplementation extends BaseServiceImplementation<Articles,Long> implements ArticleServiceInterface {
 
+    @Autowired
     ArticleDao articleDao;
 
     public JpaRepository<Articles, Long> getDao() {

@@ -13,9 +13,7 @@ public abstract class BaseServiceImplementation<Entity,PK> implements BaseServic
           return (Entity) this.getDao().findById(id);
     }
 
-    public List<Entity> savAll(List<Entity> entity){
-        return this.getDao().saveAll(entity);
-    }
+
     @Override
     public Entity save(Entity entity){
         return  this.getDao().save(entity);

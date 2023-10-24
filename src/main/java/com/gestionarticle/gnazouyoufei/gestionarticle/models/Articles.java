@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import javax.annotation.processing.Generated;
+
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name= "article")
@@ -21,7 +22,6 @@ public class Articles {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id", nullable=false)
-    @NotNull
     private long id;
 
     @Column(name= "libelle", nullable=false, length= 20)

@@ -8,7 +8,7 @@ import java.util.List;
 public interface GenericControllerInterface<Entity, PK> {
 
     BaseServiceInterface<Entity,PK> getService();
-    List<Entity> findAll();
+    List<Entity> All();
     Entity findById(PK id);
     List<Entity> saveAll(List<Entity> entity);
     Entity save(Entity entity);

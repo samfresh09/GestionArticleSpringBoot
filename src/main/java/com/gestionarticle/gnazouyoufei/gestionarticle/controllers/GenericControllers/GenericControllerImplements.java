@@ -1,43 +1,52 @@
 package com.gestionarticle.gnazouyoufei.gestionarticle.controllers.GenericControllers;
 
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 public abstract class GenericControllerImplements<Entity,PK> implements GenericControllerInterface<Entity,PK> {
 
     @Override
-    public List<Entity> findAll() {
+    @GetMapping("/all")
+    public List<Entity> All() {
         return this.getService().findAll();
     }
 
     @Override
-    public Entity findById(PK id) {
+    @GetMapping("/findBy/{id}")
+    public Entity findById(@PathVariable PK id) {
         return (Entity) this.getService().findById(id);
     }
 
     @Override
-    public List<Entity> saveAll(List<Entity> entity) {
+    @PostMapping("/saveAll")
+    public List<Entity> saveAll(@RequestBody List<Entity> entity) {
         return this.getService().saveAll(entity);
     }
 
     @Override
-    public Entity save(Entity entity) {
+    @PostMapping("/save")
+    public Entity save(@RequestBody Entity entity) {
         return (Entity) this.getService().save(entity);
     }
 
     @Override
-    public boolean delete(Entity entity) {
+    @DeleteMapping("/delete")
+    public boolean delete(@RequestBody Entity entity) {
         this.getService().delete(entity);
         return true;
     }
 
     @Override
-    public boolean deleteById(PK id) {
+    @DeleteMapping("/delete/{id}")
+    public boolean deleteById(@PathVariable PK id) {
         this.getService().deleteById(id);
         return true;
     }
 
     @Override
-    public Entity update(Entity entity) {
+    @PutMapping("/update")
+    public Entity update(@RequestBody Entity entity) {
         return (Entity) this.getService().update(entity);
     }
 }
