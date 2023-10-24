@@ -35,4 +35,8 @@ public class Articles {
 
     @Column(name= "status", nullable= false)
     private boolean status;
+
+    @ManyToOne
+    @JoinColumn(name = "categorie", nullable = true)
+    private Category categorie;
 }

@@ -7,4 +7,5 @@ import java.util.UUID;
 
 public interface CategoryServiceInterface extends BaseServiceInterface<Category, UUID> {
     //definir les methode specifique a la classe category
+
 }
